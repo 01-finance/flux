@@ -1,0 +1,552 @@
+{
+	"history": [],
+	"address": "0xA05F01dF58C627B72d37063BA300C00Ef067bf92",
+	"contractName": "SearchProvider",
+	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "previousOwner",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "OwnershipTransferred",
+			"type": "event",
+			"signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "contract IPriceOracle",
+					"name": "oracle_",
+					"type": "address"
+				}
+			],
+			"name": "changeOracle",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x47c421b5"
+		},
+		{
+			"inputs": [],
+			"name": "core",
+			"outputs": [
+				{
+					"internalType": "contract FluxApp",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xf2f4eb26"
+		},
+		{
+			"inputs": [],
+			"name": "fluxMiner",
+			"outputs": [
+				{
+					"internalType": "contract FluxMint",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xff7d5057"
+		},
+		{
+			"inputs": [],
+			"name": "fluxToken",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x9c9dbde1"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "mkt",
+					"type": "address"
+				}
+			],
+			"name": "getLoanFluxMinted",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "bySupply",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "byBorrow",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x72e5266b"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "contract IMarket",
+					"name": "mkt",
+					"type": "address"
+				}
+			],
+			"name": "getLonFluxAPY",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "supplyFluxAPY",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "borrowFluxAPY",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x61fbe7a4"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				}
+			],
+			"name": "getProfitability",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "int256",
+							"name": "apy",
+							"type": "int256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "loanIncome",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "loanExpenses",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "fluxIncome",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "supplyValue",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "borrowValue",
+							"type": "uint256"
+						},
+						{
+							"internalType": "address[]",
+							"name": "markets",
+							"type": "address[]"
+						},
+						{
+							"internalType": "int256[]",
+							"name": "supplyAPYs",
+							"type": "int256[]"
+						},
+						{
+							"internalType": "int256[]",
+							"name": "borrowAPYs",
+							"type": "int256[]"
+						},
+						{
+							"internalType": "int256[]",
+							"name": "borrowFluxAPYs",
+							"type": "int256[]"
+						},
+						{
+							"internalType": "int256[]",
+							"name": "supplyFluxAPYs",
+							"type": "int256[]"
+						},
+						{
+							"internalType": "uint256[]",
+							"name": "supply",
+							"type": "uint256[]"
+						},
+						{
+							"internalType": "uint256[]",
+							"name": "borrow",
+							"type": "uint256[]"
+						}
+					],
+					"internalType": "struct SearchProvider.SummaryVars",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xcad92a5f"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "admin",
+					"type": "address"
+				},
+				{
+					"internalType": "contract FluxApp",
+					"name": "_core",
+					"type": "address"
+				},
+				{
+					"internalType": "contract FluxMint",
+					"name": "_fluxMiner",
+					"type": "address"
+				},
+				{
+					"internalType": "contract IPriceOracle",
+					"name": "_oracle",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "_fluxToken",
+					"type": "address"
+				}
+			],
+			"name": "initialize",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x1459457a"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "contract IMarket",
+					"name": "mkt",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				}
+			],
+			"name": "loanProfitability",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint256",
+							"name": "supplyValue",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "borrowValue",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "supply",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "borrow",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "loanIncome",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "loanExpenses",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "fluxIncome",
+							"type": "uint256"
+						},
+						{
+							"internalType": "int256",
+							"name": "supplyAPY",
+							"type": "int256"
+						},
+						{
+							"internalType": "int256",
+							"name": "borrowAPY",
+							"type": "int256"
+						},
+						{
+							"internalType": "int256",
+							"name": "supplyFluxAPY",
+							"type": "int256"
+						},
+						{
+							"internalType": "int256",
+							"name": "borrowFluxAPY",
+							"type": "int256"
+						}
+					],
+					"internalType": "struct SearchProvider.LoanSum",
+					"name": "sum",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x9fe52480"
+		},
+		{
+			"inputs": [],
+			"name": "oracle",
+			"outputs": [
+				{
+					"internalType": "contract IPriceOracle",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x7dc0d1d0"
+		},
+		{
+			"inputs": [],
+			"name": "owner",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x8da5cb5b"
+		},
+		{
+			"inputs": [],
+			"name": "release",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x86d1a69f"
+		},
+		{
+			"inputs": [],
+			"name": "renounceOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x715018a6"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				}
+			],
+			"name": "setFluxToken",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0xeb114de2"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "staker",
+					"type": "address"
+				}
+			],
+			"name": "stakeSummary",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "stakePools",
+					"type": "address[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "totalStakes",
+					"type": "uint256[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "stakes",
+					"type": "uint256[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "_unlaimedFlux",
+					"type": "uint256[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xb09d4b4e"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "transferOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0xf2fde38b"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				}
+			],
+			"name": "unclaimedFlux",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xb6556fd3"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				}
+			],
+			"name": "unclaimedFluxAtLoan",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "total",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address[]",
+					"name": "markets",
+					"type": "address[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "bySupply",
+					"type": "uint256[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "byBorrow",
+					"type": "uint256[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x3da7ae05"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				}
+			],
+			"name": "unclaimedFluxAtStake",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "total",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address[]",
+					"name": "stakePools",
+					"type": "address[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "rewards",
+					"type": "uint256[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xae63733c"
+		}
+	],
+	"version": "0x93fdfe8941ea574c977509946c74cce2fdd68969a57ba144650ce8507b9a5ad8",
+	"compiler": {
+		"name": "solc",
+		"version": "0.6.8+commit.0bbfe453.Emscripten.clang",
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"evmVersion": "petersburg"
+	},
+	"logic": "0x8d911077d110622F461dfE46F847B31b90c8dB7c"
+}

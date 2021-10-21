@@ -1,0 +1,206 @@
+{
+	"history": [],
+	"address": "0x2C1e44C290f5f75d6F413eFFdEeB6c3988B991F1",
+	"contractName": "Guard",
+	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "previousOwner",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "OwnershipTransferred",
+			"type": "event",
+			"signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+		},
+		{
+			"inputs": [],
+			"name": "flux",
+			"outputs": [
+				{
+					"internalType": "contract FluxApp",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x43b97166"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "admin",
+					"type": "address"
+				},
+				{
+					"internalType": "contract FluxApp",
+					"name": "_flux",
+					"type": "address"
+				}
+			],
+			"name": "initialize",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x485cc955"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "borrower",
+					"type": "address"
+				}
+			],
+			"name": "liquidate",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x2f865568"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "borrower",
+					"type": "address"
+				}
+			],
+			"name": "margincall",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0xa079d60a"
+		},
+		{
+			"inputs": [],
+			"name": "owner",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x8da5cb5b"
+		},
+		{
+			"inputs": [],
+			"name": "renounceOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x715018a6"
+		},
+		{
+			"inputs": [],
+			"name": "router",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xf887ea40"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "contract IERC20",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"name": "totalReserverForMaringCall",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x79ee8970"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "transferOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0xf2fde38b"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "contract IMargingCallMarket",
+					"name": "mkt",
+					"type": "address"
+				}
+			],
+			"name": "tryToRepay",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x6cc12e22"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "contract IERC20",
+					"name": "token",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "withdraw",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0xf3fef3a3"
+		}
+	],
+	"version": "0x9fe3ae5f94ca4203d37e7924690f69c3a93fe144b43bfdc500c3efc218e7cc9f",
+	"compiler": {
+		"name": "solc",
+		"version": "0.6.8+commit.0bbfe453.Emscripten.clang",
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"evmVersion": "petersburg"
+	},
+	"logic": "0xf62E471cA4C941050f03D9823ca9ddD5e110ba00"
+}

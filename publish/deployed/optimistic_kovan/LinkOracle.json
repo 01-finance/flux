@@ -1,0 +1,207 @@
+{
+	"history": [],
+	"address": "0x1c96D5ED011f29704Ea3d71E49dba6Dd66CA271F",
+	"contractName": "LinkOracle",
+	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "previousOwner",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "OwnershipTransferred",
+			"type": "event",
+			"signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "oldPrice",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "newPrice",
+					"type": "uint256"
+				}
+			],
+			"name": "PriceChanged",
+			"type": "event",
+			"signature": "0x4d624906ce6fd4e4b8b649463516ff505029a1903a8cc34bd82b4ca0f9a479de"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "contract AggregatorV3Interface",
+					"name": "aggregator",
+					"type": "address"
+				}
+			],
+			"name": "SetAggregator",
+			"type": "event",
+			"signature": "0xc437dd54e22b198f1cbc09dee1a8e823dec5346dd8cd48b5be2c55f6e4f517e9"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"name": "aggregators",
+			"outputs": [
+				{
+					"internalType": "contract AggregatorV3Interface",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x112cdab9"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				}
+			],
+			"name": "getLastPriceMan",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "updateAt",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "price",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x9ebf732a"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				}
+			],
+			"name": "getPriceMan",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x393c62b8"
+		},
+		{
+			"inputs": [],
+			"name": "owner",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x8da5cb5b"
+		},
+		{
+			"inputs": [],
+			"name": "renounceOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x715018a6"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				},
+				{
+					"internalType": "contract AggregatorV3Interface",
+					"name": "aggregator",
+					"type": "address"
+				}
+			],
+			"name": "setAggregator",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x7394a7f6"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "transferOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0xf2fde38b"
+		}
+	],
+	"version": "0x118092f2b0bf488c04e5f8d546b2c5e92716656e1a7419783284cbec95b32c29",
+	"compiler": {
+		"name": "solc",
+		"version": "0.6.8+commit.0bbfe453.Emscripten.clang",
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"evmVersion": "petersburg"
+	}
+}

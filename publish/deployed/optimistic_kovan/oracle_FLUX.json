@@ -1,0 +1,143 @@
+{
+	"history": [],
+	"address": "0xa3d4220152068ee77667d848220Ece9d73861B86",
+	"contractName": "SimplePriceOracleConnLinkOracle",
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "contract IPriceOracle",
+					"name": "_oracle",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "_token",
+					"type": "address"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "constructor"
+		},
+		{
+			"inputs": [],
+			"name": "decimals",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x313ce567"
+		},
+		{
+			"inputs": [],
+			"name": "description",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x7284e416"
+		},
+		{
+			"inputs": [],
+			"name": "latestRoundData",
+			"outputs": [
+				{
+					"internalType": "uint80",
+					"name": "",
+					"type": "uint80"
+				},
+				{
+					"internalType": "int256",
+					"name": "answer",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint80",
+					"name": "",
+					"type": "uint80"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xfeaf968c"
+		},
+		{
+			"inputs": [],
+			"name": "oracle",
+			"outputs": [
+				{
+					"internalType": "contract IPriceOracle",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x7dc0d1d0"
+		},
+		{
+			"inputs": [],
+			"name": "token",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xfc0c546a"
+		},
+		{
+			"inputs": [],
+			"name": "version",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x54fd4d50"
+		}
+	],
+	"version": "0x22913e20200e3f81e338b689c136e0a83f8156071301dc57aa9913ada72dc483",
+	"compiler": {
+		"name": "solc",
+		"version": "0.6.8+commit.0bbfe453.Emscripten.clang",
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"evmVersion": "petersburg"
+	}
+}

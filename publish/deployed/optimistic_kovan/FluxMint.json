@@ -1,0 +1,1066 @@
+{
+	"history": [],
+	"address": "0xa9b03A52ce79DB7392C355B541859B06C247C3d3",
+	"contractName": "FluxMintOnOptimism",
+	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "pool",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "enum TradeType",
+					"name": "kind",
+					"type": "uint8"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "distribution",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "currIndex",
+					"type": "uint256"
+				}
+			],
+			"name": "DistributedFlux",
+			"type": "event",
+			"signature": "0x5be901a49aefb396f1a2eee7941eaf0681900fbfffd2e7c3bf68efb160b7f27a"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "recipient",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "FluxGranted",
+			"type": "event",
+			"signature": "0xa75c284cfe95947790332fc9caeb4231ab2dad3df7cadf6e416ac646ee3dc7cd"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "pool",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "enum TradeType",
+					"name": "kind",
+					"type": "uint8"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "startBlock",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "endBlock",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "factor",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "weights",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "seed",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "fluxMinted",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "oldIndex",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "newIndex",
+					"type": "uint256"
+				}
+			],
+			"name": "FluxMintIndexChanged",
+			"type": "event",
+			"signature": "0xc7279c05df558704e004c621cc6bff201286dd0a1b2744170a122b4e72e004a2"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "pool",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "oldSeed",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "newSeed",
+					"type": "uint256"
+				}
+			],
+			"name": "FluxSeedChanged",
+			"type": "event",
+			"signature": "0xb074a54e09d643dadb2379ad813fbe52ff4730e7c30628498ac8d0c867f65662"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint16",
+					"name": "borrow",
+					"type": "uint16"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint16",
+					"name": "supply",
+					"type": "uint16"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint16",
+					"name": "stake",
+					"type": "uint16"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint16",
+					"name": "team",
+					"type": "uint16"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint16",
+					"name": "community",
+					"type": "uint16"
+				}
+			],
+			"name": "FluxWeightsChanged",
+			"type": "event",
+			"signature": "0x6bedc3da3e79707d263c53034dd9bc69d14169aff5886581c62755d01e2846d4"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "pool",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "oldWeight",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "newWeight",
+					"type": "uint256"
+				}
+			],
+			"name": "GenesisMintWeightsChanged",
+			"type": "event",
+			"signature": "0xa1cf81f1ececa2070fa691670acb756620271105cbdfe0871ec944cc72cc9f82"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "previousOwner",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "OwnershipTransferred",
+			"type": "event",
+			"signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "oldTeam",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "oldComm",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "newTeam",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "newComm",
+					"type": "address"
+				}
+			],
+			"name": "TeamAdressChanged",
+			"type": "event",
+			"signature": "0x3e948b8726cbe2473a74e6f4c12383c1302eb9c864abe2e6478e444b30a55525"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "recipient",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "weights",
+					"type": "uint256"
+				}
+			],
+			"name": "UnlockFlux",
+			"type": "event",
+			"signature": "0x959ad7696b43d384a15919a68e4052ed3d1a7b90bd9da132db9dba029af1bd6b"
+		},
+		{
+			"inputs": [],
+			"name": "TEAM_COMMUNITY_WEIGHT_SLOT",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x9f5e3036"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "pools",
+					"type": "address[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "weights",
+					"type": "uint256[]"
+				}
+			],
+			"name": "batchSetPoolGenesisWeight",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x4e68858c"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "pools",
+					"type": "address[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "weights",
+					"type": "uint256[]"
+				}
+			],
+			"name": "batchSetPoolWeight",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x3be8b768"
+		},
+		{
+			"inputs": [],
+			"name": "borrowFluxWeights_deprecated",
+			"outputs": [
+				{
+					"internalType": "uint16",
+					"name": "",
+					"type": "uint16"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x3ddf88f5"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "fromTime",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "endTime",
+					"type": "uint256"
+				}
+			],
+			"name": "calcFluxsMined",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function",
+			"constant": true,
+			"signature": "0xf0ad27b8"
+		},
+		{
+			"inputs": [],
+			"name": "claimDaoFlux",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x68944de4"
+		},
+		{
+			"inputs": [],
+			"name": "claimFlux",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x329629ad"
+		},
+		{
+			"inputs": [],
+			"name": "communityFluxReceive",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x70502f1b"
+		},
+		{
+			"inputs": [],
+			"name": "communityFluxWeights_deprecated",
+			"outputs": [
+				{
+					"internalType": "uint16",
+					"name": "",
+					"type": "uint16"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x4229077e"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint128",
+					"name": "a",
+					"type": "uint128"
+				},
+				{
+					"internalType": "uint128",
+					"name": "b",
+					"type": "uint128"
+				}
+			],
+			"name": "connectTwoUint128",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function",
+			"constant": true,
+			"signature": "0xf9fa0c2a"
+		},
+		{
+			"inputs": [],
+			"name": "fluxAPP",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x6be542b7"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "fluxIndexState",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "index",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "blockTimestamp",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x3ec00a95"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "fluxMintIndex",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x2686aa8d"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"name": "fluxSeeds",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xe4228f7b"
+		},
+		{
+			"inputs": [],
+			"name": "fluxToken",
+			"outputs": [
+				{
+					"internalType": "contract IERC20",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x9c9dbde1"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "fromTime",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "endTime",
+					"type": "uint256"
+				}
+			],
+			"name": "fluxsMinedBase",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function",
+			"constant": true,
+			"signature": "0x6f754320"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "fromTime",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "endTime",
+					"type": "uint256"
+				}
+			],
+			"name": "fluxsMinedGenusis",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function",
+			"constant": true,
+			"signature": "0x72e00b0c"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"name": "genesisWeights",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x9932e18e"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "pool",
+					"type": "address"
+				},
+				{
+					"internalType": "enum TradeType",
+					"name": "kind",
+					"type": "uint8"
+				},
+				{
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				}
+			],
+			"name": "getFluxRewards",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "reward",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xae79431b"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "pool",
+					"type": "address"
+				}
+			],
+			"name": "getGenesisWeight",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "height",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "low",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x07a9ac94"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "pool",
+					"type": "address"
+				}
+			],
+			"name": "getPoolSeed",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "height",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "low",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xe39e4e3e"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "recipient",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "grantFlux",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x5ecf0f2d"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "admin_",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "fluxAPP_",
+					"type": "address"
+				},
+				{
+					"internalType": "contract IERC20",
+					"name": "_fluxToken",
+					"type": "address"
+				}
+			],
+			"name": "initialize",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0xc0c53b8b"
+		},
+		{
+			"inputs": [],
+			"name": "lastUnlockBlock",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x98779c6e"
+		},
+		{
+			"inputs": [],
+			"name": "lastUnlockTime",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xa5c38b3d"
+		},
+		{
+			"inputs": [],
+			"name": "owner",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x8da5cb5b"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "pool",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "interestIndex",
+					"type": "uint256"
+				}
+			],
+			"name": "refreshFluxMintIndex",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x6ca168c9"
+		},
+		{
+			"inputs": [],
+			"name": "refreshPoolFluxMintIndex",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x336b936f"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"name": "remainFluxByUser",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x84548368"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "pool",
+					"type": "address"
+				}
+			],
+			"name": "removePool",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x3b7d0946"
+		},
+		{
+			"inputs": [],
+			"name": "renounceOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x715018a6"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "team",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "comm",
+					"type": "address"
+				}
+			],
+			"name": "resetTeamAdress",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x5a2a22ea"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "contract IERC20",
+					"name": "token",
+					"type": "address"
+				}
+			],
+			"name": "setFluxToken",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0xeb114de2"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "pool",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "seed",
+					"type": "uint256"
+				}
+			],
+			"name": "setPoolSeed",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x6566fca9"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "pool",
+					"type": "address"
+				},
+				{
+					"internalType": "enum TradeType",
+					"name": "kind",
+					"type": "uint8"
+				},
+				{
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				}
+			],
+			"name": "settleOnce",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0xab9b4857"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"name": "splitTowWeight",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "height",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "low",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function",
+			"constant": true,
+			"signature": "0xdf9fbc38"
+		},
+		{
+			"inputs": [],
+			"name": "supplyFluxWeights_deprecated",
+			"outputs": [
+				{
+					"internalType": "uint16",
+					"name": "",
+					"type": "uint16"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x8166baab"
+		},
+		{
+			"inputs": [],
+			"name": "teamFluxReceive",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xf5358e09"
+		},
+		{
+			"inputs": [],
+			"name": "teamFluxWeights_deprecated",
+			"outputs": [
+				{
+					"internalType": "uint16",
+					"name": "",
+					"type": "uint16"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xa666e337"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "transferOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0xf2fde38b"
+		}
+	],
+	"version": "0x78eb7b1227ccbb82e60bcd38bbadd9517a81dbac4abdc672fee5c6fd56a7bf70",
+	"compiler": {
+		"name": "solc",
+		"version": "0.6.8+commit.0bbfe453.Emscripten.clang",
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"evmVersion": "petersburg"
+	},
+	"logic": "0x39a9Aef0450bF4b4e67D9Cb1741bD67F1491cbEe"
+}

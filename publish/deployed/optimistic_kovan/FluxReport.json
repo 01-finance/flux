@@ -1,0 +1,597 @@
+{
+	"history": [],
+	"address": "0x2828B94F17bbF37167BE733fd04E1B214dCabDA5",
+	"contractName": "FluxReport",
+	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "previousOwner",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "OwnershipTransferred",
+			"type": "event",
+			"signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+		},
+		{
+			"inputs": [],
+			"name": "core",
+			"outputs": [
+				{
+					"internalType": "contract FluxApp",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xf2f4eb26"
+		},
+		{
+			"inputs": [],
+			"name": "defaultLPHelper",
+			"outputs": [
+				{
+					"internalType": "contract ILPHelper",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x474a006f"
+		},
+		{
+			"inputs": [],
+			"name": "fluxMiner",
+			"outputs": [
+				{
+					"internalType": "contract FluxMint",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xff7d5057"
+		},
+		{
+			"inputs": [],
+			"name": "fluxToken",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x9c9dbde1"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "mkt",
+					"type": "address"
+				}
+			],
+			"name": "getFluxMintedNextBlock",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "bySupply",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "byBorrow",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xfeb5070b"
+		},
+		{
+			"inputs": [],
+			"name": "getFluxPrice",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x0753cd73"
+		},
+		{
+			"inputs": [],
+			"name": "getFluxTVL",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "tvl",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x81847e9e"
+		},
+		{
+			"inputs": [],
+			"name": "getFluxTVLDetail",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "totalSupply",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "totalBorrow",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "totalStaked",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xae61ebcd"
+		},
+		{
+			"inputs": [],
+			"name": "getLoanPoolReport",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "pool",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "tvl",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "totalSupply",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "totalBorrow",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "priceUSD",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "supplyInterestPreDay",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "borrowInterestPreDay",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "supplyFluxAPY",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "borrowFluxAPY",
+							"type": "uint256"
+						},
+						{
+							"internalType": "address",
+							"name": "underlying",
+							"type": "address"
+						}
+					],
+					"internalType": "struct FluxReport.LoanPoolReport[]",
+					"name": "pools",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x20856738"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				}
+			],
+			"name": "getPriceMan",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x393c62b8"
+		},
+		{
+			"inputs": [],
+			"name": "getStakePoolReport",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "pool",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "tvl",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "apy",
+							"type": "uint256"
+						},
+						{
+							"internalType": "address",
+							"name": "token0",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "token1",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "token0Staked",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "token1Staked",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "token0PriceUSD",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "token1PriceUSD",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct FluxReport.StakePoolReport[]",
+					"name": "pools",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x1a88a1b7"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				}
+			],
+			"name": "getTokenPrice",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xd02641a0"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "admin",
+					"type": "address"
+				},
+				{
+					"internalType": "contract FluxApp",
+					"name": "_core",
+					"type": "address"
+				},
+				{
+					"internalType": "contract FluxMint",
+					"name": "_fluxMiner",
+					"type": "address"
+				},
+				{
+					"internalType": "contract IPriceOracle",
+					"name": "_oracle",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "_fluxToken",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "_usdToken",
+					"type": "address"
+				},
+				{
+					"internalType": "contract ILPHelper",
+					"name": "_defaultLPHeler",
+					"type": "address"
+				}
+			],
+			"name": "initialize",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x35876476"
+		},
+		{
+			"inputs": [],
+			"name": "oracle",
+			"outputs": [
+				{
+					"internalType": "contract IPriceOracle",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x7dc0d1d0"
+		},
+		{
+			"inputs": [],
+			"name": "owner",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x8da5cb5b"
+		},
+		{
+			"inputs": [],
+			"name": "renounceOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x715018a6"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "flux",
+					"type": "address"
+				}
+			],
+			"name": "setFLUX",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0xee4e0550"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "stakePool",
+					"type": "address"
+				},
+				{
+					"internalType": "contract ILPHelper",
+					"name": "helper",
+					"type": "address"
+				}
+			],
+			"name": "setHelper",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x189daa64"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "contract ILPHelper",
+					"name": "helper",
+					"type": "address"
+				}
+			],
+			"name": "setLPHelper",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0xa72b66e6"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "contract IPriceOracle",
+					"name": "_oracle",
+					"type": "address"
+				}
+			],
+			"name": "setOracle",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x7adbf973"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "path",
+					"type": "address[]"
+				}
+			],
+			"name": "setTokenSwapToUSDPath",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x2b5e5bec"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				}
+			],
+			"name": "setUSDToken",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0x218fe3a5"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"name": "stakeLPHelpers",
+			"outputs": [
+				{
+					"internalType": "contract ILPHelper",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x5007095f"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "tokenSwapToUSDPath",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0x4061dd1e"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "transferOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function",
+			"signature": "0xf2fde38b"
+		},
+		{
+			"inputs": [],
+			"name": "usdToken",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function",
+			"constant": true,
+			"signature": "0xf897a22b"
+		}
+	],
+	"version": "0x7e4804eff70499267c131dce205d48a8556bb5ed0f923e37216fc63ebe68159a",
+	"compiler": {
+		"name": "solc",
+		"version": "0.6.8+commit.0bbfe453.Emscripten.clang",
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"evmVersion": "petersburg"
+	},
+	"logic": "0x83De667FBF22523CabEd379996Cc3c0f5D9d23Cb"
+}
