@@ -4,8 +4,6 @@
 
 ## Optimistic Kovan
 
-https://raw.githubusercontent.com/01-finance/flux/main/publish/deployed/optimistic_kovan/market_fDAI..jsonjson
-https://raw.githubusercontent.com/01-finance/flux/main/publish/deployed/optimistic_kovan/Guard..jsonjson
 | Contract | Address | JSON |
 | ---- | ---- | ---- |
 | FLUX | [0x364ec49de604A705E95741B03D463383609dEF39](https:/kovan-optimistic.etherscan.io/address/0x364ec49de604A705E95741B03D463383609dEF39) | [JSON](https://raw.githubusercontent.com/01-finance/flux/main/publish/deployed/optimistic_kovan/token_FLU.jsonX) |
