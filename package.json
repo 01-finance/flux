@@ -1,0 +1,45 @@
+{
+  "name": "flux-protocol",
+  "version": "1.0.0",
+  "description": "flux defi protocol",
+  "main": "",
+  "author": "FluxTeam",
+  "license": "MIT",
+  "scripts": {
+    "compile": "oz compile",
+    "test": "oz compile && mocha --exit  --timeout 80000 --recursive ./test/*.test.js",
+    "testOne": "oz compile && mocha --timeout 80000 --exit $1",
+    "node": "npx ganache-cli -d",
+    "buildAPIDoc": "npx solidity-docgen -o ./doc/.temp_api  -t ./doc/template",
+    "prettier:solidity": "prettier --write 'contracts/**/*.sol'",
+    "lint": "prettier --write contracts/**/*.sol && solhint -f unix contracts/**/*.sol"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/01-finance/flux.git"
+  },
+  "keywords": [
+    "DeFi",
+    "Contract",
+    "Lending"
+  ],
+  "bugs": {
+    "url": "https://github.com/01-finance/flux/issues"
+  },
+  "homepage": "https://github.com/01-finance/flux#readme",
+  "devDependencies": {
+    "@chainlink/contracts": "^0.1.6",
+    "@openzeppelin/cli": "^2.8.2",
+    "@openzeppelin/contracts": "^3.1.0",
+    "@openzeppelin/test-environment": "^0.1.4",
+    "@openzeppelin/test-helpers": "^0.5.6",
+    "@openzeppelin/upgrades": "^2.8.0",
+    "bignumber.js": "^9.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^7.2.0",
+    "prettier": "^2.2.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.5",
+    "solhint": "^3.3.2",
+    "@truffle/hdwallet-provider": "^1.2.2"
+  }
+}

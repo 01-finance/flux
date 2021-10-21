@@ -1,0 +1,16 @@
+node_modules
+
+# .openzeppelin cli
+.openzeppelin/*
+!.openzeppelin/project.json
+build/contracts
+
+# solidity tool
+bin
+
+# doc
+doc/.temp
+doc/.temp_api
+doc/dist
+.pri.json
+pri.json.example
