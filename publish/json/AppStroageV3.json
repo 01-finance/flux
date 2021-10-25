@@ -1,0 +1,403 @@
+{
+  "fileName": "FluxStorage.sol",
+  "contractName": "AppStroageV3",
+  "sourcePath": "contracts/FluxStorage.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "borrower",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "added",
+          "type": "bool"
+        }
+      ],
+      "name": "CreditLoanChange",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "borrower",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "limit",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "oldLimit",
+          "type": "uint256"
+        }
+      ],
+      "name": "CreditLoanLimitChange",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "CLOSE_FACTOR_MANTISSA",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "IS_FLUX",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "JOINED_MKT_LIMIT",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "KILL_FACTOR_MANTISSA",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "LoanBorrowIndex",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "borrows",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "REDEEM_FACTOR_MANTISSA",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "configs",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "creditBorrowers",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "creditLimit",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "disableBorrow",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "disableSupply",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "fluxMiner",
+      "outputs": [
+        {
+          "internalType": "contract FluxMint",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "liquidateDisabled",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lockAllAction",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "marketList",
+      "outputs": [
+        {
+          "internalType": "contract IMarket",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarket",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "markets",
+      "outputs": [
+        {
+          "internalType": "enum MarketStatus",
+          "name": "status",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "collRatioMan",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "poolBorrowLimit",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IStake",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "stakePoolStatus",
+      "outputs": [
+        {
+          "internalType": "enum MarketStatus",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "stakePools",
+      "outputs": [
+        {
+          "internalType": "contract IStake",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "supportTokens",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506105c5806100206000396000f3fe608060405234801561001057600080fd5b506004361061012c5760003560e01c80638e8f294b116100ad578063c91b4aa211610071578063c91b4aa2146103c7578063d356e3a2146103ed578063db369747146101e2578063de8518c31461041b578063ff7d5057146104235761012c565b80638e8f294b146103225780639c92f48d14610373578063a8ce81251461037b578063b6afed7214610383578063c89dcc16146103a95761012c565b80635ef7fbad116100f45780635ef7fbad146101fc57806377d42cc7146102a25780638358c181146102aa57806386add17f146102f45780638a0737a0146102fc5761012c565b806317525bf414610131578063232b956c1461017057806331d72f65146101a957806331f57ff2146101c557806356e23767146101e2575b600080fd5b6101576004803603602081101561014757600080fd5b50356001600160a01b031661042b565b6040805192835260208301919091528051918290030190f35b61018d6004803603602081101561018657600080fd5b5035610444565b604080516001600160a01b039092168252519081900360200190f35b6101b161046b565b604080519115158252519081900360200190f35b61018d600480360360208110156101db57600080fd5b5035610479565b6101ea610486565b60408051918252519081900360200190f35b6101ea6004803603602081101561021257600080fd5b81019060208101813564010000000081111561022d57600080fd5b82018360208201111561023f57600080fd5b8035906020019184600183028401116401000000008311171561026157600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929550610492945050505050565b6101b16104af565b6102d0600480360360208110156102c057600080fd5b50356001600160a01b03166104b4565b604051808260028111156102e057fe5b60ff16815260200191505060405180910390f35b6101b16104c9565b61018d6004803603602081101561031257600080fd5b50356001600160a01b03166104d9565b6103486004803603602081101561033857600080fd5b50356001600160a01b03166104f4565b6040518083600281111561035857fe5b60ff1681526020018281526020019250505060405180910390f35b6101b1610513565b6101ea61051c565b6101b16004803603602081101561039957600080fd5b50356001600160a01b0316610528565b6103b161053d565b6040805160ff9092168252519081900360200190f35b6101ea600480360360208110156103dd57600080fd5b50356001600160a01b0316610542565b6101ea6004803603604081101561040357600080fd5b506001600160a01b0381358116916020013516610554565b6101b1610571565b61018d610580565b600a602052600090815260409020805460019091015482565b6002818154811061045157fe5b6000918252602090912001546001600160a01b0316905081565b600054610100900460ff1681565b6008818154811061045157fe5b670f43fc2c04ee000081565b805160208183018101805160038252928201919093012091525481565b600181565b60096020526000908152604090205460ff1681565b6000546301000000900460ff1681565b6005602052600090815260409020546001600160a01b031681565b6001602081905260009182526040909120805491015460ff9091169082565b60005460ff1681565b670ff59ee833b3000081565b600b6020526000908152604090205460ff1681565b601481565b60066020526000908152604090205481565b600c60209081526000928352604080842090915290825290205481565b60005462010000900460ff1681565b6007546001600160a01b03168156fea2646970667358221220f6981cb3a05abbef2b2e39d34aadc28530e9081fa8f0ebee14bf533abc163bf964736f6c63430006080033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061012c5760003560e01c80638e8f294b116100ad578063c91b4aa211610071578063c91b4aa2146103c7578063d356e3a2146103ed578063db369747146101e2578063de8518c31461041b578063ff7d5057146104235761012c565b80638e8f294b146103225780639c92f48d14610373578063a8ce81251461037b578063b6afed7214610383578063c89dcc16146103a95761012c565b80635ef7fbad116100f45780635ef7fbad146101fc57806377d42cc7146102a25780638358c181146102aa57806386add17f146102f45780638a0737a0146102fc5761012c565b806317525bf414610131578063232b956c1461017057806331d72f65146101a957806331f57ff2146101c557806356e23767146101e2575b600080fd5b6101576004803603602081101561014757600080fd5b50356001600160a01b031661042b565b6040805192835260208301919091528051918290030190f35b61018d6004803603602081101561018657600080fd5b5035610444565b604080516001600160a01b039092168252519081900360200190f35b6101b161046b565b604080519115158252519081900360200190f35b61018d600480360360208110156101db57600080fd5b5035610479565b6101ea610486565b60408051918252519081900360200190f35b6101ea6004803603602081101561021257600080fd5b81019060208101813564010000000081111561022d57600080fd5b82018360208201111561023f57600080fd5b8035906020019184600183028401116401000000008311171561026157600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929550610492945050505050565b6101b16104af565b6102d0600480360360208110156102c057600080fd5b50356001600160a01b03166104b4565b604051808260028111156102e057fe5b60ff16815260200191505060405180910390f35b6101b16104c9565b61018d6004803603602081101561031257600080fd5b50356001600160a01b03166104d9565b6103486004803603602081101561033857600080fd5b50356001600160a01b03166104f4565b6040518083600281111561035857fe5b60ff1681526020018281526020019250505060405180910390f35b6101b1610513565b6101ea61051c565b6101b16004803603602081101561039957600080fd5b50356001600160a01b0316610528565b6103b161053d565b6040805160ff9092168252519081900360200190f35b6101ea600480360360208110156103dd57600080fd5b50356001600160a01b0316610542565b6101ea6004803603604081101561040357600080fd5b506001600160a01b0381358116916020013516610554565b6101b1610571565b61018d610580565b600a602052600090815260409020805460019091015482565b6002818154811061045157fe5b6000918252602090912001546001600160a01b0316905081565b600054610100900460ff1681565b6008818154811061045157fe5b670f43fc2c04ee000081565b805160208183018101805160038252928201919093012091525481565b600181565b60096020526000908152604090205460ff1681565b6000546301000000900460ff1681565b6005602052600090815260409020546001600160a01b031681565b6001602081905260009182526040909120805491015460ff9091169082565b60005460ff1681565b670ff59ee833b3000081565b600b6020526000908152604090205460ff1681565b601481565b60066020526000908152604090205481565b600c60209081526000928352604080842090915290825290205481565b60005462010000900460ff1681565b6007546001600160a01b03168156fea2646970667358221220f6981cb3a05abbef2b2e39d34aadc28530e9081fa8f0ebee14bf533abc163bf964736f6c63430006080033",
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.8+commit.0bbfe453.Emscripten.clang",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "petersburg"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "fileName": "Guard.sol",
+  "contractName": "GuardStorage",
+  "sourcePath": "contracts/market/Guard.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "flux",
+      "outputs": [
+        {
+          "internalType": "contract FluxApp",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "router",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IERC20",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "totalReserverForMaringCall",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50610104806100206000396000f3fe6080604052348015600f57600080fd5b5060043610603c5760003560e01c806343b9716614604157806379ee8970146063578063f887ea40146098575b600080fd5b6047609e565b604080516001600160a01b039092168252519081900360200190f35b608660048036036020811015607757600080fd5b50356001600160a01b031660ad565b60408051918252519081900360200190f35b604760bf565b6000546001600160a01b031681565b60026020526000908152604090205481565b6001546001600160a01b03168156fea2646970667358221220de5fbf353f5eee17a668b634d0a938d136c14c35af5f93d53fb62eafa4b0c2b264736f6c63430006080033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b5060043610603c5760003560e01c806343b9716614604157806379ee8970146063578063f887ea40146098575b600080fd5b6047609e565b604080516001600160a01b039092168252519081900360200190f35b608660048036036020811015607757600080fd5b50356001600160a01b031660ad565b60408051918252519081900360200190f35b604760bf565b6000546001600160a01b031681565b60026020526000908152604090205481565b6001546001600160a01b03168156fea2646970667358221220de5fbf353f5eee17a668b634d0a938d136c14c35af5f93d53fb62eafa4b0c2b264736f6c63430006080033",
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.8+commit.0bbfe453.Emscripten.clang",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "petersburg"
+  }
+}

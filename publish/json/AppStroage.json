@@ -1,0 +1,222 @@
+{
+  "fileName": "FluxStorage.sol",
+  "contractName": "AppStroage",
+  "sourcePath": "contracts/FluxStorage.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "CLOSE_FACTOR_MANTISSA",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "IS_FLUX",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "JOINED_MKT_LIMIT",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "REDEEM_FACTOR_MANTISSA",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "configs",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "disableBorrow",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "disableSupply",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "liquidateDisabled",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lockAllAction",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "marketList",
+      "outputs": [
+        {
+          "internalType": "contract IMarket",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarket",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "markets",
+      "outputs": [
+        {
+          "internalType": "enum MarketStatus",
+          "name": "status",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "collRatioMan",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "poolBorrowLimit",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "supportTokens",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506103ea806100206000396000f3fe608060405234801561001057600080fd5b50600436106100cf5760003560e01c80638a0737a01161008c578063a8ce812511610066578063a8ce812514610278578063c89dcc1614610280578063c91b4aa21461029e578063de8518c3146102c4576100cf565b80638a0737a0146101f95780638e8f294b1461021f5780639c92f48d14610270576100cf565b8063232b956c146100d457806331d72f651461010d57806356e23767146101295780635ef7fbad1461014357806377d42cc7146101e957806386add17f146101f1575b600080fd5b6100f1600480360360208110156100ea57600080fd5b50356102cc565b604080516001600160a01b039092168252519081900360200190f35b6101156102f3565b604080519115158252519081900360200190f35b610131610301565b60408051918252519081900360200190f35b6101316004803603602081101561015957600080fd5b81019060208101813564010000000081111561017457600080fd5b82018360208201111561018657600080fd5b803590602001918460018302840111640100000000831117156101a857600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092955061030d945050505050565b61011561032a565b61011561032f565b6100f16004803603602081101561020f57600080fd5b50356001600160a01b031661033f565b6102456004803603602081101561023557600080fd5b50356001600160a01b031661035a565b6040518083600281111561025557fe5b60ff1681526020018281526020019250505060405180910390f35b610115610379565b610131610382565b61028861038e565b6040805160ff9092168252519081900360200190f35b610131600480360360208110156102b457600080fd5b50356001600160a01b0316610393565b6101156103a5565b600281815481106102d957fe5b6000918252602090912001546001600160a01b0316905081565b600054610100900460ff1681565b670f43fc2c04ee000081565b805160208183018101805160038252928201919093012091525481565b600181565b6000546301000000900460ff1681565b6005602052600090815260409020546001600160a01b031681565b6001602081905260009182526040909120805491015460ff9091169082565b60005460ff1681565b670ff59ee833b3000081565b601481565b60066020526000908152604090205481565b60005462010000900460ff168156fea26469706673582212201f094eaa086f9baaabde66f7b09d8d7a26a2e6874856b4cd5daaa9e845a9119064736f6c63430006080033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100cf5760003560e01c80638a0737a01161008c578063a8ce812511610066578063a8ce812514610278578063c89dcc1614610280578063c91b4aa21461029e578063de8518c3146102c4576100cf565b80638a0737a0146101f95780638e8f294b1461021f5780639c92f48d14610270576100cf565b8063232b956c146100d457806331d72f651461010d57806356e23767146101295780635ef7fbad1461014357806377d42cc7146101e957806386add17f146101f1575b600080fd5b6100f1600480360360208110156100ea57600080fd5b50356102cc565b604080516001600160a01b039092168252519081900360200190f35b6101156102f3565b604080519115158252519081900360200190f35b610131610301565b60408051918252519081900360200190f35b6101316004803603602081101561015957600080fd5b81019060208101813564010000000081111561017457600080fd5b82018360208201111561018657600080fd5b803590602001918460018302840111640100000000831117156101a857600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092955061030d945050505050565b61011561032a565b61011561032f565b6100f16004803603602081101561020f57600080fd5b50356001600160a01b031661033f565b6102456004803603602081101561023557600080fd5b50356001600160a01b031661035a565b6040518083600281111561025557fe5b60ff1681526020018281526020019250505060405180910390f35b610115610379565b610131610382565b61028861038e565b6040805160ff9092168252519081900360200190f35b610131600480360360208110156102b457600080fd5b50356001600160a01b0316610393565b6101156103a5565b600281815481106102d957fe5b6000918252602090912001546001600160a01b0316905081565b600054610100900460ff1681565b670f43fc2c04ee000081565b805160208183018101805160038252928201919093012091525481565b600181565b6000546301000000900460ff1681565b6005602052600090815260409020546001600160a01b031681565b6001602081905260009182526040909120805491015460ff9091169082565b60005460ff1681565b670ff59ee833b3000081565b601481565b60066020526000908152604090205481565b60005462010000900460ff168156fea26469706673582212201f094eaa086f9baaabde66f7b09d8d7a26a2e6874856b4cd5daaa9e845a9119064736f6c63430006080033",
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.8+commit.0bbfe453.Emscripten.clang",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "petersburg"
+  }
+}
