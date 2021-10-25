@@ -11,3 +11,7 @@ FLUX is developed by the Zero One team. FLUX is a decentralized, secure, non-cus
 Currently, FLUX is registered in Conflux, BSC, Heco, OKExChain, Polygon and ETH. In the future, lossless cross-chain lending will come true on popular public chains such as Solana, Arbitrum, and Near or Layer2.
 
 Compared with the lending products like Compound and Aave on the Ethereum network, FLUX has improved its interest rate model, mortgage model, liquidation logic, and so on. Also, the contract call cost is low, the execution efficiency is high, the user experience is good, and the development potential is unlimitable. In the near future, FLUX will build a richer decentralized lending market.
+
+## deploy info
+
+[deployed contracts](./publish/deployed/README.md)
