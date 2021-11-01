@@ -1,4 +1,18 @@
 
 Flux-Protocol deployed
 
-**[Mainnet](./mainnet_contracts.md) |  [Testnet](./testnet_contracts.md)**
+## MNetworks
+
+- [conflux](./conflux.md)
+- [heco](./heco.md)
+- [bsc](./bsc.md)
+- [okexchain](./okexchain.md)
+- [polygon](./polygon.md)
+- [arbitrum](./arbiturm.md)
+
+
+
+## Testnet Networks
+
+see [testnet_contracts.m](./testnet_contracts.md)
+
