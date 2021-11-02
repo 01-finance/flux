@@ -8,7 +8,7 @@ Flux-Protocol deployed
 - [bsc](./bsc.md)
 - [okexchain](./okexchain.md)
 - [polygon](./polygon.md)
-- [arbitrum](./arbiturm.md)
+- [arbitrum](./arbitrum.md)
 
 
 
