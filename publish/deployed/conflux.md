@@ -20,17 +20,17 @@
 
 | Market (ftoken) | Address | Decimals | JSON|
 |--------|--------|--------|--------|
-| fBTC| [0x88085a4eb6d1fa6b1c6bfc59fa2975f12ae3fc55](https://confluxscan.io/address/0x88085a4eb6d1fa6b1c6bfc59fa2975f12ae3fc55)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
+| fBTC| [cfx:aceau0ws05j9y426rt8fx8vks12wz296my3wgrrgsb](https://confluxscan.io/address/cfx:aceau0ws05j9y426rt8fx8vks12wz296my3wgrrgsb)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
 | fCAMP| [cfx:accr5mgu7jmz1vugn5ftkk9wzf6ygjt1sj33fwhzh5](https://confluxscan.io/address/cfx:accr5mgu7jmz1vugn5ftkk9wzf6ygjt1sj33fwhzh5)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
-| fCFX| [0x852dedfe1e87ed3d898552797df500008bd5b0b4](https://confluxscan.io/address/0x852dedfe1e87ed3d898552797df500008bd5b0b4)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketCFX.json)  |
+| fCFX| [cfx:accw55t8d4d84tpkuzkhw9tzaaaj1zru0uu5j9a585](https://confluxscan.io/address/cfx:accw55t8d4d84tpkuzkhw9tzaaaj1zru0uu5j9a585)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketCFX.json)  |
 | fCMBTM| [cfx:acfe5t6vrx3tnxfcec3jn2tw19pdjcmb3ejgxsr11a](https://confluxscan.io/address/cfx:acfe5t6vrx3tnxfcec3jn2tw19pdjcmb3ejgxsr11a)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
 | fCWBTC| [cfx:ace9eyc5kzh1kn8a232ux7za0chmat3cja7ake3pnb](https://confluxscan.io/address/cfx:ace9eyc5kzh1kn8a232ux7za0chmat3cja7ake3pnb)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
 | fCYFII| [cfx:acgz977j2gyya6ybdk24m3bha3tnup66wa7r2ectbj](https://confluxscan.io/address/cfx:acgz977j2gyya6ybdk24m3bha3tnup66wa7r2ectbj)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
-| fDAI| [0x87e6fd81195a67a7f75aa7f37ed1c3deb4b43972](https://confluxscan.io/address/0x87e6fd81195a67a7f75aa7f37ed1c3deb4b43972)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
-| fETH| [0x8157bd3def177f17fa73658d33479e1e134b05f8](https://confluxscan.io/address/0x8157bd3def177f17fa73658d33479e1e134b05f8)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
-| fFC| [0x832b068632a20163891cc2e0f95fde6cec287b4b](https://confluxscan.io/address/0x832b068632a20163891cc2e0f95fde6cec287b4b)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
-| fUSDC| [0x82e572bde3482d028838b43f56f8fd7cb16af6d5](https://confluxscan.io/address/0x82e572bde3482d028838b43f56f8fd7cb16af6d5)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
-| fUSDT| [0x82185822a4adc0f1b2de5f6ca7fbf9a23d546c37](https://confluxscan.io/address/0x82185822a4adc0f1b2de5f6ca7fbf9a23d546c37)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
+| fDAI| [cfx:acd8r9pbdfrgtk91nmx9g90v2ttnkrb3sjdtw31gcv](https://confluxscan.io/address/cfx:acd8r9pbdfrgtk91nmx9g90v2ttnkrb3sjdtw31gcv)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
+| fETH| [cfx:acazttk776n18f94srw24p4hx2tbgw2f9az9m79y16](https://confluxscan.io/address/cfx:acazttk776n18f94srw24p4hx2tbgw2f9az9m79y16)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
+| fFC| [cfx:acbw0byggmvac26kdxbsb8m9530s2md5kpp09e9010](https://confluxscan.io/address/cfx:acbw0byggmvac26kdxbsb8m9530s2md5kpp09e9010)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
+| fUSDC| [cfx:acbsm6z76rec4ayjhc4d8z129z8nc4104ytb6c9vd8](https://confluxscan.io/address/cfx:acbsm6z76rec4ayjhc4d8z129z8nc4104ytb6c9vd8)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
+| fUSDT| [cfx:acbbu0bcyw06b6rw53t03k959gvd4zdpg6ek80b7s2](https://confluxscan.io/address/cfx:acbbu0bcyw06b6rw53t03k959gvd4zdpg6ek80b7s2)| 18  |[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
 | fAUSD | [cfx:acduthbcv9kk11s0gupy039j4e405vkbhppgpr3439](https://confluxscan.io/address/cfx:acduthbcv9kk11s0gupy039j4e405vkbhppgpr3439) |18|[JSON](https://github.com/01-finance/flux/blob/main/publish/json/MarketERC20.json)  |
 
 ### Stake Pool
